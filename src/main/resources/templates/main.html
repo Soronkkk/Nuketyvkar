@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+<body>
+<div class="screen">
+    <div th:if="${!messages.isEmpty()}">
+        <div th:each="msg : ${messages}">
+            <p style="text-align:left">Аноним - 1970-01-01 00:01</p>
+            <p th:text="${msg.getMessageText()}"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

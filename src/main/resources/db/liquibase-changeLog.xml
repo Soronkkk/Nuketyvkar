@@ -1,0 +1,43 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!--Messages table-->
+    <changeSet id="Koloyartsev-1" author="Koloyartsev V.A.">
+        <createTable tableName="messages">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="message_text" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!--Messages data set-->
+    <changeSet id="Koloyartsev-2" author="Koloyartsev V.A.">
+        <insert tableName="messages">
+            <column name="id" value="1"/>
+            <column name="message_text" value="Message ONE"/>
+        </insert>
+        <insert tableName="messages">
+            <column name="id" value="2"/>
+            <column name="message_text" value="Message TWO"/>
+        </insert>
+        <insert tableName="messages">
+            <column name="id" value="3"/>
+            <column name="message_text" value="Message THREE"/>
+        </insert>
+        <insert tableName="messages">
+            <column name="id" value="4"/>
+            <column name="message_text" value="Message FOUR"/>
+        </insert>
+        <insert tableName="messages">
+            <column name="id" value="5"/>
+            <column name="message_text" value="Message FIVE"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
