@@ -1,6 +1,6 @@
-package com.project.pet.textbattle.controller;
+package com.project.pet.nuketyvkar.controller;
 
-import com.project.pet.textbattle.services.MessageService;
+import com.project.pet.nuketyvkar.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

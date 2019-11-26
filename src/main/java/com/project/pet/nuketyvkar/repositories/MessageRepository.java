@@ -1,6 +1,6 @@
-package com.project.pet.textbattle.repositories;
+package com.project.pet.nuketyvkar.repositories;
 
-import com.project.pet.textbattle.model.Message;
+import com.project.pet.nuketyvkar.model.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

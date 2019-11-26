@@ -1,6 +1,6 @@
-package com.project.pet.textbattle.services;
+package com.project.pet.nuketyvkar.services;
 
-import com.project.pet.textbattle.model.Message;
+import com.project.pet.nuketyvkar.model.Message;
 
 import java.util.List;
 

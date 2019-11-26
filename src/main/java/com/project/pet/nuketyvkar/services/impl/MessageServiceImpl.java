@@ -1,8 +1,8 @@
-package com.project.pet.textbattle.services.impl;
+package com.project.pet.nuketyvkar.services.impl;
 
-import com.project.pet.textbattle.model.Message;
-import com.project.pet.textbattle.repositories.MessageRepository;
-import com.project.pet.textbattle.services.MessageService;
+import com.project.pet.nuketyvkar.model.Message;
+import com.project.pet.nuketyvkar.repositories.MessageRepository;
+import com.project.pet.nuketyvkar.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

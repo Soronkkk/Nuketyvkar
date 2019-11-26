@@ -1,4 +1,4 @@
-package com.project.pet.textbattle;
+package com.project.pet.nuketyvkar;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

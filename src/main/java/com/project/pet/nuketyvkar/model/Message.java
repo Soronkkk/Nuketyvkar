@@ -1,4 +1,4 @@
-package com.project.pet.textbattle.model;
+package com.project.pet.nuketyvkar.model;
 
 import javax.persistence.*;
 
