@@ -40,4 +40,41 @@
         </insert>
     </changeSet>
 
+    <!--Person table-->
+    <changeSet id="Koloyartsev-3" author="Koloyartsev V.A.">
+        <createTable tableName="person">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="username" type="VARCHAR(64)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(128)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!--Person table data set-->
+    <changeSet id="Koloyartsev-4" author="Koloyartsev V.A.">
+        <insert tableName="person">
+            <column name="username" value="user"/>
+            <column name="password" value="$2a$10$aXpu1lorpayTSJeOYCxQcOWyoGBr6dEEj475OfuXPojnbAKFsEWFi"/>
+            <column name="email" value="user@email.com"/>
+        </insert>
+        <insert tableName="person">
+            <column name="username" value="moder"/>
+            <column name="password" value="$2a$10$aXpu1lorpayTSJeOYCxQcOWyoGBr6dEEj475OfuXPojnbAKFsEWFi"/>
+            <column name="email" value="moder@email.com"/>
+        </insert>
+        <insert tableName="person">
+            <column name="username" value="admin"/>
+            <column name="password" value="$2a$10$aXpu1lorpayTSJeOYCxQcOWyoGBr6dEEj475OfuXPojnbAKFsEWFi"/>
+            <column name="email" value="admin@email.com"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
