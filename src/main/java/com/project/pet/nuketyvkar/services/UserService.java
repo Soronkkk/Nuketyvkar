@@ -2,6 +2,7 @@ package com.project.pet.nuketyvkar.services;
 
 import com.project.pet.nuketyvkar.model.User;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
@@ -22,4 +23,10 @@ public interface UserService {
      */
     Optional<User> findByUsername(String username);
 
+    /**
+     * Возвращает список всех пользователей.
+     *
+     * @return список пользователей.
+     */
+    List<User> findAll();
 }

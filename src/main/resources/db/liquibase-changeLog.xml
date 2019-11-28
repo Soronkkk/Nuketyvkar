@@ -77,4 +77,71 @@
         </insert>
     </changeSet>
 
+    <!--    Table messages add new collumns -->
+    <changeSet id="Koloyartsev-5" author="Koloyartsev V.A.">
+        <addColumn tableName="messages">
+            <column name="user_id" type="BIGINT" value="1">
+                <constraints referencedTableName="person"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="messages">
+            <column name="created_date_time" type="TIMESTAMP" value="2019-01-01"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="Koloyartsev-6" author="Koloyartsev V.A.">
+        <addForeignKeyConstraint constraintName="fk_message_person"
+                                 baseTableName="messages" baseColumnNames="user_id"
+                                 referencedTableName="person" referencedColumnNames="id"/>
+    </changeSet>
+
+<!--    Table messages update collumns-->
+    <changeSet id="Koloyartsev-7" author="Koloyartsev V.A">
+        <update tableName="messages">
+            <column name="created_date_time" value="2019-01-01 12:12:00">
+            </column>
+            <column name="message_text" value="Кирилл где десигн?">
+            </column>
+            <where>
+                id = 1
+            </where>
+        </update>
+        <update tableName="messages">
+            <column name="created_date_time" value="2019-01-01 13:11:14">
+            </column>
+            <column name="message_text" value="..ходят слухи, что будет андроид версия.. Но это только слухи">
+            </column>
+            <where>
+                id = 2
+            </where>
+        </update>
+        <update tableName="messages">
+            <column name="created_date_time" value="2019-01-01 14:01:15">
+            </column>
+            <column name="message_text" value="Ребят, вы где все?..">
+            </column>
+            <where>
+                id = 3
+            </where>
+        </update>
+        <update tableName="messages">
+            <column name="created_date_time" value="2019-01-01 16:05:17">
+            </column>
+            <column name="message_text" value="Я что здесь один?..">
+            </column>
+            <where>
+                id = 4
+            </where>
+        </update>
+        <update tableName="messages">
+            <column name="created_date_time" value="2019-01-01 18:03:12">
+            </column>
+            <column name="message_text" value="Серёг скинь сиськи в лс">
+            </column>
+            <where>
+                id = 5
+            </where>
+        </update>
+    </changeSet>
+
 </databaseChangeLog>

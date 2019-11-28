@@ -8,15 +8,37 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
 </head>
 <body>
-<div layout:fragment="content">
-    <div class="screen">
-        <div th:if="${!messages.isEmpty()}">
-            <div th:each="msg : ${messages}">
-                <p style="text-align:left">Аноним - 1970-01-01 00:01</p>
-                <p th:text="${msg.getMessageText()}"></p>
+<div class="screen" layout:fragment="content">
+    <main id="content" class="row">
+
+        <div id="chat_block" class="col s9">
+            <!--Сообщения-->
+            <div th:if="${!messages.isEmpty()}">
+                <div th:each="msg : ${messages}">
+                    <p style="text-align:left" th:text="${msg.getAuthor().getUsername()}
+                    + '   ' +
+                    ${#temporals.format(msg.getCreatedDateTime(), 'dd-MM-yyyy HH:mm:ss')}">
+                    </p>
+                    <p th:text="${msg.getMessageText()}"></p>
+                </div>
             </div>
         </div>
-    </div>
+
+        <!--Список всех пользователей-->
+        <div id="broadcast_block " class="col s3">
+            <div class="row">
+                <div class="col">
+                    <h4 th:if="${!users.isEmpty()}" class="center-align">Online(все пользователи)</h4>
+                    <div th:each="user: ${users}" class="card transparent">
+                        <div class="card-action transparent">
+                            <a th:text="${user.getUsername()}" href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
 </div>
 </body>
 </html>

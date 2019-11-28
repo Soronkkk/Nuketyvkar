@@ -1,6 +1,7 @@
 package com.project.pet.nuketyvkar.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -19,6 +20,9 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Message> messages;
 
     public User(){}
 
