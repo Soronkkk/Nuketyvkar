@@ -77,6 +77,72 @@
         </insert>
     </changeSet>
 
+    <!--https://github.com/Soronkkk/Nuketyvkar/issues/7-->
+    <!--roles table-->
+    <changeSet id="Glebov-1" author="Seri4">
+        <createTable tableName="roles">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!--person_roles table-->
+    <changeSet id="Glebov-2" author="Seri4">
+        <createTable tableName="person_roles">
+            <column name="person_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_person" references="person(id)"/>
+            </column>
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_role" references="roles(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!--Roles data insert-->
+    <changeSet id="Glebov-3" author="Seri4">
+        <insert tableName="roles">
+            <column name="name" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="name" value="ROLE_MODERATOR"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="name" value="ROLE_USER"/>
+        </insert>
+    </changeSet>
+
+    <!-- person_roles data insert-->
+    <changeSet id="Glebov-4" author="Seri4">
+        <insert tableName="person_roles">
+            <column name="person_id" value="1"/>
+            <column name="role_id" value="3"/>
+        </insert>
+        <insert tableName="person_roles">
+            <column name="person_id" value="2"/>
+            <column name="role_id" value="2"/>
+        </insert>
+        <insert tableName="person_roles">
+            <column name="person_id" value="2"/>
+            <column name="role_id" value="3"/>
+        </insert>
+        <insert tableName="person_roles">
+            <column name="person_id" value="3"/>
+            <column name="role_id" value="1"/>
+        </insert>
+        <insert tableName="person_roles">
+            <column name="person_id" value="3"/>
+            <column name="role_id" value="2"/>
+        </insert>
+        <insert tableName="person_roles">
+            <column name="person_id" value="3"/>
+            <column name="role_id" value="3"/>
+        </insert>
+    </changeSet>
+
     <!--    Table messages add new collumns -->
     <changeSet id="Koloyartsev-5" author="Koloyartsev V.A.">
         <addColumn tableName="messages">

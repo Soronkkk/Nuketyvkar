@@ -21,6 +21,12 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "person_roles",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roleList;
+
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Message> messages;
 
@@ -64,4 +70,11 @@ public class User {
         this.email = email;
     }
 
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+    }
 }
