@@ -1,6 +1,7 @@
 package com.project.pet.nuketyvkar.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -19,6 +20,12 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "person_roles",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roleList;
 
     public User(){}
 
@@ -60,4 +67,11 @@ public class User {
         this.email = email;
     }
 
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+    }
 }
