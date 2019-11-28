@@ -27,6 +27,9 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roleList;
 
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Message> messages;
+
     public User(){}
 
     public User(String username, String password, String email) {

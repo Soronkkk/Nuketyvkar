@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout/layout}">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +8,67 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
 </head>
 <body>
-<div layout:fragment="content">
-    <div class="screen">
-        <div th:if="${!messages.isEmpty()}">
-            <div th:each="msg : ${messages}">
-                <p style="text-align:left">Аноним - 1970-01-01 00:01</p>
-                <p th:text="${msg.getMessageText()}"></p>
+<div class="screen" layout:fragment="content">
+    <main id="content" class="row">
+
+        <div id="chat_block" class="col s9">
+
+            <!--Сообщения-->
+            <div th:if="${!messages.isEmpty()}" class="layer">
+                <div class="row" th:each="msg : ${messages}">
+                    <div class="col">
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <p style="text-align:left" th:text="${msg.getAuthor().getUsername()}"/>
+                        </div>
+                        <div class="col">
+                            <span>
+                                <p style="text-align:left"
+                                   th:text="${#temporals.format(msg.getCreatedDateTime(), 'dd-MM-yyyy HH:mm:ss')}"/>
+                            </span>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <p th:text="${msg.getMessageText()}"></p>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+
+            <div sec:authorize="isAuthenticated()">
+                <!--Отправка сообщения-->
+                <form th:action="@{/messages}" method="post" id="sendMessage">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="messageText">Введите сообщение</label>
+                            <input type="text" id="messageText" th:name="messageText" class="materialize-textarea">
+                            <button class="btn waves-effect waves-light right teal darken-4 " type="submit">
+                                Отправить
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <!--Список всех пользователей-->
+        <h4 class="center-align">Online</h4>
+        <div id="broadcast_block " class="col s3">
+            <div class="row">
+                <div class="col layer" style="height: 320px">
+                    <div th:each="user: ${users}" class="card transparent">
+                        <div class="card-action transparent">
+                            <a th:text="${user.getUsername()}" href="#"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+    </main>
 </div>
 </body>
 </html>
