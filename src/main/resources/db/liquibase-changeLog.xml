@@ -136,7 +136,7 @@
         <update tableName="messages">
             <column name="created_date_time" value="2019-01-01 18:03:12">
             </column>
-            <column name="message_text" value="Серёг скинь сиськи в лс">
+            <column name="message_text" value="сейчас бы егермейстер навернуть с апельсинчиком и корицей">
             </column>
             <where>
                 id = 5
