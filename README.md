@@ -23,7 +23,7 @@
   
 6) Запустить класс Application
 
-        com/simbirsoft/verifyv/koloiartsev/Application.java
+        com/project/pet/nuketyvkar/NuketyvkarApplication.java
         
 7) Войти под одной из учетных записей:
         
@@ -36,4 +36,3 @@
         Login: user
         Password: 12345
         
-8) Для комфортной разработки рекомендуется установить плагин Lombok.
