@@ -19,23 +19,18 @@
     <!--Messages data set-->
     <changeSet id="Koloyartsev-2" author="Koloyartsev V.A.">
         <insert tableName="messages">
-            <column name="id" value="1"/>
             <column name="message_text" value="Message ONE"/>
         </insert>
         <insert tableName="messages">
-            <column name="id" value="2"/>
             <column name="message_text" value="Message TWO"/>
         </insert>
         <insert tableName="messages">
-            <column name="id" value="3"/>
             <column name="message_text" value="Message THREE"/>
         </insert>
         <insert tableName="messages">
-            <column name="id" value="4"/>
             <column name="message_text" value="Message FOUR"/>
         </insert>
         <insert tableName="messages">
-            <column name="id" value="5"/>
             <column name="message_text" value="Message FIVE"/>
         </insert>
     </changeSet>
