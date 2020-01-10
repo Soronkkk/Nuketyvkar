@@ -1,0 +1,26 @@
+spring:
+  server:
+    port: 8080
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nuketyvkar-db
+    username: postgres
+    password: qwerty
+    driver-class-name: org.postgresql.Driver
+    test-while-idle: true
+    validation-query: SELECT 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:db/liquibase-changeLog.xml
+    enabled: true
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false

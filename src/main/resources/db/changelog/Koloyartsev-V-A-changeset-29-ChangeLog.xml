@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!--    new table role_room_user-->
+    <changeSet id="Koloyartsev-29" author="Koloyartsev V.A.">
+        <createTable tableName="role_room_user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_role_role_room_user" references="room_role(id)"/>
+            </column>
+            <column name="room_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_room_role_room_user" references="room(id)"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_use_role_room_user" references="person(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

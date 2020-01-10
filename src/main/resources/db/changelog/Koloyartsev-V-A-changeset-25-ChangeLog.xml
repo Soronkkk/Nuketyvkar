@@ -1,0 +1,17 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!--    room dataset - is deleted-->
+    <changeSet id="Koloyartsev-23" author="Koloyartsev V.A.">
+        <update tableName="room">
+            <column name="is_deleted" value="false"/>
+            <where>
+                id=1
+            </where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

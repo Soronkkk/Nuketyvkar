@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Chat Simbirsoft</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/messagesSocket.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+</head>
+<body>
+<div class="screen" layout:fragment="content">
+
+    <main id="content" class="row">
+
+        <br/>
+        <div class="col s8">
+
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <div th:each="room: ${rooms}">
+                            <li class="tab col">
+                                <a th:id="'r' + ${room.getId()}" th:href="'#' + ${room.getId()}" th:text="${room.getName()}"></a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div th:each="room: ${rooms}">
+                <div th:id="${room.getId()}" class="layer">
+                    <div th:each="msg : ${room.getMessages()}">
+                        <div class="row">
+                            <div class="col">
+                                <div class="w-100"></div>
+                                <div class="col">
+                                    <p th:text="${msg.getAuthor().getUsername()}"></p>
+                                </div>
+                                <div class="col">
+                                    <span>
+                                     <p style="text-align:left"
+                                        th:text="${#temporals.format(msg.getCreatedDateTime().toLocalDateTime().atZone(zonedid), 'yyyy-MM-dd HH:mm:ss')}"></p>
+                                    </span>
+                                </div>
+                                <div class="w-100"></div>
+                                <div class="col">
+                                    <p th:text="${msg.getMessageText()}"></p>
+                                </div>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div th:id="'response' + ${room.getId()}" ></div>
+                </div>
+            </div>
+
+            <!--        Message form-->
+            <div id="messageForm">
+                <div th:action="@{/messages}" method="post" id="sendMessageForm">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div id="conversationDiv">
+                                <label for="messageText">Enter message</label>
+                                <input type="text" id="messageText" th:name="messageText"
+                                       class="materialize-textarea">
+                                <strong><p id="messageError"></p></strong>
+                                <button id="sendMessage" onclick="sendMessage()"
+                                        class="btn waves-effect waves-light right blue darken-4 ">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>connect()</script>
+        </div>
+
+        <!--Users list-->
+        <div id="broadcast_block " class="col s2">
+            <div class="row">
+                <div class="col layer">
+                    <!--Users -->
+                    <ul th:each="user: ${users}" class="collection">
+                        <li class="collection-item" th:text="${user.getUsername()}"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+<script>
+    connect();
+</script>
+</html>

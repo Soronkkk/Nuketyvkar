@@ -1,0 +1,37 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!--Users table dataset-->
+    <include file="changelog/Koloyartsev-V-A-changeset-3-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    room tabel dataset-->
+    <include file="changelog/Koloyartsev-V-A-changeset-15-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    room and person dataset-->
+    <!--    <include file="changelog/Koloyartsev-V-A-changeset-16-ChangeLog.xml" relativeToChangelogFile="true"/>-->
+
+    <!--    message table dataset-->
+    <include file="changelog/Koloyartsev-V-A-changeset-17-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    room role dataset-->
+    <!--    <include file="changelog/Koloyartsev-V-A-changeset-18-ChangeLog.xml" relativeToChangelogFile="true"/>-->
+
+    <!--    room and room roles dataset-->
+    <!--    <include file="changelog/Koloyartsev-V-A-changeset-19-ChangeLog.xml" relativeToChangelogFile="true"/>-->
+
+    <!--    room dataset - isPrivate and isBot-->
+    <include file="changelog/Koloyartsev-V-A-changeset-23-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    room dataset - is deleted-->
+    <include file="changelog/Koloyartsev-V-A-changeset-25-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    room role table dataset-->
+    <include file="changelog/Koloyartsev-V-A-changeset-30-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    role room user table dataset-->
+    <include file="changelog/Koloyartsev-V-A-changeset-31-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

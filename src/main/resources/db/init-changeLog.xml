@@ -1,0 +1,70 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!--Messages table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-1-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--Users table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-2-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    Room table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-4-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    Room roles table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-5-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    update column name message table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-6-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    update data type column message table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-7-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--add foreignkey message table, many to one, message/person-->
+    <include file="changelog/Koloyartsev-V-A-changeset-8-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    add column message table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-9-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    add foreignkey message table, many to one, message/room-->
+    <include file="changelog/Koloyartsev-V-A-changeset-10-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    room and person table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-11-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    add column room role table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-12-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    add foreignkey message table, many to one, message/room-->
+    <include file="changelog/Koloyartsev-V-A-changeset-13-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    room and room role table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-14-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--Messages table to data type created date time-->
+    <include file="changelog/Koloyartsev-V-A-changeset-20-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--   add new column in room table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-21-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--   add new column in room table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-22-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--   add new column in room table-->
+    <include file="changelog/Koloyartsev-V-A-changeset-24-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    drop table room_and_room_roles-->
+    <include file="changelog/Koloyartsev-V-A-changeset-26-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    drop table room_and_person-->
+    <include file="changelog/Koloyartsev-V-A-changeset-27-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    drop table room_role-->
+    <include file="changelog/Koloyartsev-V-A-changeset-28-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+    <!--    new table role_room_user-->
+    <include file="changelog/Koloyartsev-V-A-changeset-29-ChangeLog.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

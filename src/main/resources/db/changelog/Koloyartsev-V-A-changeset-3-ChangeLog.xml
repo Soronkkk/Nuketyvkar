@@ -1,0 +1,24 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--Users table dataset-->
+    <changeSet id="Koloyartsev-3" author="Koloyartsev V.A.">
+        <insert tableName="person">
+            <column name="username" value="admin"/>
+            <column name="password" value="$2a$10$aXpu1lorpayTSJeOYCxQcOWyoGBr6dEEj475OfuXPojnbAKFsEWFi"/>
+            <column name="email" value="admin@email.com"/>
+        </insert>
+        <insert tableName="person">
+            <column name="username" value="moder"/>
+            <column name="password" value="$2a$10$aXpu1lorpayTSJeOYCxQcOWyoGBr6dEEj475OfuXPojnbAKFsEWFi"/>
+            <column name="email" value="moder@email.com"/>
+        </insert>
+        <insert tableName="person">
+            <column name="username" value="user"/>
+            <column name="password" value="$2a$10$aXpu1lorpayTSJeOYCxQcOWyoGBr6dEEj475OfuXPojnbAKFsEWFi"/>
+            <column name="email" value="user@email.com"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

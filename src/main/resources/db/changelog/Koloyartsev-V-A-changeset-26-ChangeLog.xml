@@ -4,11 +4,9 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <!--    init changelog-->
-    <include file="init-changeLog.xml" relativeToChangelogFile="true"/>
-
-    <!--    dataset changelog-->
-    <include file="dataset-changeLog.xml" relativeToChangelogFile="true"/>
-
+    <!--    drop table room_and_room_roles-->
+    <changeSet id="Koloyartsev-26" author="Koloyartsev V.A.">
+        <dropTable tableName="room_and_room_roles"/>
+    </changeSet>
 
 </databaseChangeLog>

@@ -1,0 +1,15 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--    message table dataset-->
+    <changeSet id="Koloyartsev-17" author="Koloyartsev V.A.">
+        <insert tableName="message">
+            <column name="user_id" value="1"/>
+            <column name="room_id" value="1"/>
+            <column name="created_date_time" value="2019-01-01 00:00:01.000"/>
+            <column name="message_text" value="Welcome to the SimbirSoft online chat"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

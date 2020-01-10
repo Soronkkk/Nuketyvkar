@@ -9,11 +9,11 @@
 
 4) Установить драйвер postgresql.
 
-5) Подключиться к базе данных. (перед этим создав её в pgAdmin, если есть такая необходимость)
+5) Подключиться к базе данных.
 
-         5.1 url: jdbc:postgresql://localhost:5432/nuketyvkar
+         5.1 url: jdbc:postgresql://localhost:5432/nuketyvkar-db
         
-         5.2 database name: nuketyvkar
+         5.2 database name: onlinechat
      
          5.3 port: 5432
      
@@ -23,7 +23,7 @@
   
 6) Запустить класс Application
 
-        com/project/pet/nuketyvkar/NuketyvkarApplication.java
+        com/simbirsoft/project/nuketyvkar/Application.java
         
 7) Войти под одной из учетных записей:
         
@@ -36,3 +36,4 @@
         Login: user
         Password: 12345
         
+8) Для комфортной разработки рекомендуется установить плагин Lombok.

@@ -1,0 +1,12 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--    add foreignkey message table, many to one, message/room-->
+    <changeSet id="Koloyartsev-10" author="Koloyartsev V.A.">
+        <addForeignKeyConstraint baseTableName="message" baseColumnNames="room_id" constraintName="fk_message_room"
+                                 referencedTableName="room"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,17 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--    room and person table-->
+    <changeSet id="Koloyartsev-11" author="Koloyartsev V.A.">
+        <createTable tableName="room_and_person">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_person_room" references="person(id)"/>
+            </column>
+            <column name="room_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_room_person" references="room(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
