@@ -13,7 +13,7 @@
 
          5.1 url: jdbc:postgresql://localhost:5432/nuketyvkar-db
         
-         5.2 database name: onlinechat
+         5.2 database name: nuketyvkar-db
      
          5.3 port: 5432
      
