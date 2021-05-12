@@ -19,7 +19,7 @@
         <liquibase-core.version>3.6.3</liquibase-core.version>
         <modelmapper.version>2.3.5</modelmapper.version>
         <lombok.version>1.18.10</lombok.version>
-        <spring.security.version>5.2.1.RELEASE</spring.security.version>
+        <spring.security.version>5.2.10.RELEASE</spring.security.version>
         <spring.data.jpa.version>2.2.3.RELEASE</spring.data.jpa.version>
         <hibernate.entitymanager.version>5.2.3.Final</hibernate.entitymanager.version>
         <hibernate.jpamodelgen.version>5.4.10.Final</hibernate.jpamodelgen.version>
